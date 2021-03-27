@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Edit Film";
+}
+@model Film;
+
+    <h1 class="display-4">Edit Film</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="EditConfirmation" method="post">
+                <div>
+                    <label asp-for="Title">Title:</label>
+                    <input asp-for="Title" />
+                </div>
+                <br />
+                <div>
+                    <label asp-for="Category">Category:</label>
+                    <input asp-for="Category" />
+                </div>
+                <br />
+                <div>
+                    <label asp-for="Year">Year:</label>
+                    <input asp-for="Year" />
+                </div>
+                <br />
+                <div>
+                    <label asp-for="Director">Director:</label>
+                    <input asp-for="Director" />
+                </div>
+                <br />
+                <div>
+                    <label asp-for="Rating">Rating:</label>
+                    <select asp-for="Rating">
+                        <option value="" disabled>Select One</option>
+                        <option value="G">G</option>
+                        <option value="PG">PG</option>
+                        <option value="PG-13">PG-13</option>
+                        <option value="R">R</option>
+                    </select>
+                </div>
+                <br />
+                <div>
+                    <label asp-for="Edited">Edited? </label><br />
+                    <label asp-for="Edited">Yes</label>
+                    <input type="radio" id="True" asp-for="Edited" value=true />
+                    <label asp-for="Edited">No</label>
+                    <input type="radio" id="False" asp-for="Edited" value=false /><br />
+                </div>
+                <br />
+                <div>
+                    <label asp-for="LentTo">Lent To:</label>
+                    <input asp-for="LentTo" />
+                </div>
+                <br />
+                <div>
+                    <label asp-for="Notes">Notes:</label>
+                    <input asp-for="Notes" />
+                </div>
+                <br />
+                <div class="text-danger" asp-validation-summary="All"></div>
+                <br />
+                <input asp-for="FilmId" type="hidden" />
+                <button class="btn btn-primary" type="submit">Make Changes</button>
+            </form>
+            <br /><br />
+            <div asp-validation-summary="All"></div>
+        </div>
+    </div>

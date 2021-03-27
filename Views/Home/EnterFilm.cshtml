@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model JHFilmSite.Models.Film;
+
+<h1 class="display-4">Seen a Great Film?</h1>
+<p class="lead">Submit it to the Joel Hilton Collection!</p>
+<div class="card">
+    <div class="card-body">
+        @* Form to Enter New Film *@
+        <form asp-action="EnterFilm" method="post" class="tm-contact-form">
+            <div class="form-group">
+                <label asp-for="Title">Title: </label>
+                <input type="text" id="Title" asp-for="Title" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Film Title" required />
+                <label asp-for="Category">Category: </label>
+                <input type="text" id="Category" asp-for="Category" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Film Category" required />
+                <label asp-for="Year">Year: </label>
+                <input type="number" id="Year" asp-for="Year" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Year Released" required />
+                <label asp-for="Director">Director: </label>
+                <input type="text" id="Director" asp-for="Director" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Director" required />
+                <label asp-for="Rating">Rating: </label>
+                <select id="Rating" asp-for="Rating" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" required>
+                    <option value="">Select</option>
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                    <option value="PG-13">PG-13</option>
+                    <option value="R">R</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edited">Edited? </label><br />
+                <label asp-for="Edited">Yes</label>
+                <input type="radio" id="True" asp-for="Edited" value=true />
+                <label asp-for="Edited">No</label>
+                <input type="radio" id="False" asp-for="Edited" value=false /><br />
+                <label asp-for="LentTo">Lent To: </label>
+                <input type="text" id="LentTo" asp-for="LentTo" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Person Lent To" />
+                <label asp-for="Notes">Notes: </label>
+                <textarea rows="4" id="Notes" asp-for="Notes" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Notes"></textarea>
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary tm-btn-submit rounded-0">
+                    Submit Film
+                </button>
+            </div>
+            <div asp-validation-summary="All"></div>
+        </form>
+    </div>
+</div>
