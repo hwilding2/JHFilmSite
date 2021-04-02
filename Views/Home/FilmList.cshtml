@@ -36,11 +36,11 @@
             <td>@x.LentTo</td>
             <td>@x.Notes</td>
             <td>
-                <a class="btn btn-success" asp-action="EditFilm" asp-route-movieId="@x.FilmId">Edit</a>
+                <a class="btn btn-success" asp-action="EditFilm" asp-route-filmId="@x.FilmId">Edit</a>
             </td>
             <td>
                 <form action="DeleteFilm" method="post">
-                    <input type="hidden" name="movieId" value="@x.FilmId" />
+                    <input type="hidden" name="filmId" value="@x.FilmId" />
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>
